@@ -5,7 +5,8 @@ const BLOCK = "\n================================================\nFILE: ";
  */
 export function splitExportFile(raw: string): Map<string, string> {
   const files = new Map<string, string>();
-  const parts = raw.split(BLOCK);
+  const normalized = raw.replace(/\r\n/g, "\n");
+  const parts = normalized.split(BLOCK);
   for (let i = 1; i < parts.length; i++) {
     const segment = parts[i];
     const headerEnd = segment.indexOf("\n================================================\n");
