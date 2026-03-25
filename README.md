@@ -104,9 +104,9 @@ Add this server block to your OpenCode MCP config:
   "mcpServers": {
     "onyx": {
       "command": "node",
-      "args": ["C:/Users/dhuec/Downloads/onyx-mcp-cli/dist/index.js"],
+      "args": ["<PROJECT_ROOT>/dist/index.js"],
       "env": {
-        "ONYX_EXPORT_PATH": "C:/Users/dhuec/Downloads/onyx-mcp-cli/schwarzit-onyx-8a5edab282632443.txt"
+        "ONYX_EXPORT_PATH": "<PROJECT_ROOT>/schwarzit-onyx-8a5edab282632443.txt"
       }
     }
   }
@@ -120,14 +120,16 @@ If your OpenCode config uses a different root key than `mcpServers`, keep the sa
 If your OpenCode supports command-based MCP registration:
 
 ```bash
-opencode mcp add onyx -- node "C:/Users/dhuec/Downloads/onyx-mcp-cli/dist/index.js"
+opencode mcp add onyx -- node "<PROJECT_ROOT>/dist/index.js"
 ```
 
 Then set/export this env var in the OpenCode runtime:
 
 ```bash
-ONYX_EXPORT_PATH=C:/Users/dhuec/Downloads/onyx-mcp-cli/schwarzit-onyx-8a5edab282632443.txt
+ONYX_EXPORT_PATH=<PROJECT_ROOT>/schwarzit-onyx-8a5edab282632443.txt
 ```
+
+Use absolute paths and replace `<PROJECT_ROOT>` with your local checkout path.
 
 ### Quick verify in OpenCode
 
